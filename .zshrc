@@ -57,7 +57,6 @@ ZSH="/home/me/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zshmarks
 )
 
 source $ZSH/oh-my-zsh.sh

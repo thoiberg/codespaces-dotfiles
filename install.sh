@@ -17,11 +17,14 @@ create_symlinks() {
     done
 }
 
-create_symlinks
-
 sudo apt-get install powerline fonts-powerline -y
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 git clone https://github.com/mashaal/wild-cherry.git "$ZSH_CUSTOM/themes/wild-cherry" --depth=1
+
+# remove the default zshrc
+rm -f ~/.zshrc
+create_symlinks
+
 ln -s "$ZSH_CUSTOM/themes/wild-cherry/zsh/wild-cherry.zsh-theme" "$ZSH_CUSTOM/themes/wild-cherry.zsh-theme"

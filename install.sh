@@ -17,7 +17,7 @@ create_symlinks() {
     done
 }
 
-sudo apt-get install powerline fonts-powerline -y
+sudo apt-get install powerline fonts-powerline fzf -y
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 ### ZSH config

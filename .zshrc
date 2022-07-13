@@ -93,6 +93,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export PS1="[%* - %D] %d %% "
 
-source ./.aliases
+source ~/.aliases
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,9 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/timhoiberg/.oh-my-zsh
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -96,24 +93,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export PS1="[%* - %D] %d %% "
 
-export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
-
 source ~/.aliases
-# source ~/Documents/scripts/set_npm_token.sh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-if [ $(ssh-add -L | grep -c 'no identities') -eq 1 ] ;then
-  ssh-add -t 18000 --apple-use-keychain ~/.ssh/id_ed25519
-else
-  ssh-add -D
-  ssh-add -t 18000 --apple-use-keychain ~/.ssh/id_ed25519
-fi
-
-# asdf setup
-. $(brew --prefix asdf)/libexec/asdf.sh
-
-eval "$(direnv hook zsh)"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

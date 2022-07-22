@@ -2,7 +2,7 @@
 default = simple
 
 [core]
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [user]
 	name = Tim Hoiberg
@@ -22,6 +22,6 @@ default = simple
 	new = green bold
 	whitespace = red reverse
 [commit]
-	template = $HOME/.gitmessage
+	template = ~/.gitmessage
 [init]
 	defaultBranch = main

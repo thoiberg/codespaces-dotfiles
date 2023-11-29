@@ -20,6 +20,7 @@ create_symlinks() {
 sudo apt-get update
 sudo apt-get install -y powerline fonts-powerline fzf less
 if ! command -v npm &> /dev/null
+then
     sudo npm install diff-so-fancy --location=global
 fi
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh

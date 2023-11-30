@@ -6,13 +6,19 @@ create_symlinks() {
     script_dir=$(dirname "$(readlink -f "$0")")
 
     # Get a list of all files in this directory that start with a dot.
-    files=$(find -maxdepth 1 -type f -name ".*")
+    if [[ -n "$CODESPACES" ]]; then
+        files=$(find -maxdepth 1 -type f -name ".*")
+    else
+        files=(find -maxdepth 1 -type f -name ".*" | grep -v .gitconfig)
+    fi
 
     # Create a symbolic link to each file in the home directory.
     for file in $files; do
         name=$(basename $file)
 
         if [ ! -f ~/$name ]; then
+
+            if [[ -z "$CODESPACES" &&  ]]
             echo "Creating symlink to $name in home directory."
             ln -s $script_dir/$name ~/$name
         fi

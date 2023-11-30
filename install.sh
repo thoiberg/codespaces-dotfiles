@@ -11,9 +11,9 @@ create_symlinks() {
     # Create a symbolic link to each file in the home directory.
     for file in $files; do
         name=$(basename $file)
-        echo "Creating symlink to $name in home directory."
 
-        if [ ! ~/$name ]; then
+        if [ ! -f ~/$name ]; then
+            echo "Creating symlink to $name in home directory."
             ln -s $script_dir/$name ~/$name
         fi
     done
@@ -24,6 +24,7 @@ sudo apt-get install -y powerline fonts-powerline fzf less
 if command -v npm &> /dev/null
 then
     sudo npm install diff-so-fancy --location=global
+    git config --global core.pager "less -FX"
 fi
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 

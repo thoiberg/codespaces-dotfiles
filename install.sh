@@ -30,7 +30,6 @@ sudo apt-get install -y powerline fonts-powerline fzf less
 if command -v npm &> /dev/null
 then
     sudo npm install diff-so-fancy --location=global
-    # git config --global core.pager "less -FX"
 fi
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 

@@ -9,7 +9,7 @@ create_symlinks() {
     if [[ -n "$CODESPACES" ]]; then
         files=$(find -maxdepth 1 -type f -name ".*")
     else
-        files=(find -maxdepth 1 -type f -name ".*" | grep -v .gitconfig)
+        files=$(find -maxdepth 1 -type f -name ".*" | grep -v .gitconfig)
     fi
 
     # Create a symbolic link to each file in the home directory.

@@ -17,8 +17,6 @@ create_symlinks() {
         name=$(basename $file)
 
         if [ ! -f ~/$name ]; then
-
-            if [[ -z "$CODESPACES" &&  ]]
             echo "Creating symlink to $name in home directory."
             ln -s $script_dir/$name ~/$name
         fi

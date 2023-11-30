@@ -5,7 +5,7 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="wild-cherry"
-ZSH="/home/me/.oh-my-zsh"
+ZSH="$HOME/.oh-my-zsh"
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -91,6 +91,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # export PS1="[%* - %D] %d %% "
+
+# broken on debian (for now)
+export ZSH_THEME_GIT_PROMPT_PREFIX=""
 
 source ~/.aliases
 

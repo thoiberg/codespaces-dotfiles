@@ -12,14 +12,16 @@ create_symlinks() {
     for file in $files; do
         name=$(basename $file)
         echo "Creating symlink to $name in home directory."
-        rm -rf ~/$name
-        ln -s $script_dir/$name ~/$name
+
+        if [ ! ~/$name ]; then
+            ln -s $script_dir/$name ~/$name
+        fi
     done
 }
 
 sudo apt-get update
 sudo apt-get install -y powerline fonts-powerline fzf less
-if ! command -v npm &> /dev/null
+if command -v npm &> /dev/null
 then
     sudo npm install diff-so-fancy --location=global
 fi

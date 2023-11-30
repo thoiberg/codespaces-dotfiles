@@ -17,6 +17,12 @@ create_symlinks() {
             ln -s $script_dir/$name ~/$name
         fi
     done
+
+    if [ ! -f "/home/me" ]; then
+        # hack to get debian instances to work with oh-my-zsh properly
+        # will need to fix later
+        ln -s /root /home/me
+    fi
 }
 
 sudo apt-get update

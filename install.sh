@@ -42,4 +42,5 @@ then
 else
     git clone git@github.com:so-fancy/diff-so-fancy.git ~/diff-so-fancy
     echo "export PATH=$PATH:~/diff-so-fancy" >> ~/.zshrc
+    echo "export LC_ALL=C" >> ~/.zshrc
 fi

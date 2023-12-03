@@ -25,10 +25,6 @@ create_symlinks() {
 
 sudo apt-get update
 sudo apt-get install -y powerline fonts-powerline ttf-ancient-fonts fzf less
-if command -v npm &> /dev/null
-then
-    sudo npm install diff-so-fancy --location=global
-fi
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 ### ZSH config
@@ -39,3 +35,11 @@ ln -s "$ZSH_CUSTOM/themes/wild-cherry/zsh/wild-cherry.zsh-theme" "$ZSH_CUSTOM/th
 # remove the default zshrc
 rm -f ~/.zshrc
 create_symlinks
+
+if command -v npm &> /dev/null
+then
+    sudo npm install diff-so-fancy --location=global
+else
+    git clone git@github.com:so-fancy/diff-so-fancy.git ~/diff-so-fancy
+    echo "export PATH=$PATH:~/diff-so-fancy" >> ~/.zshrc
+fi

@@ -36,6 +36,10 @@ ln -s "$ZSH_CUSTOM/themes/wild-cherry/zsh/wild-cherry.zsh-theme" "$ZSH_CUSTOM/th
 rm -f ~/.zshrc
 create_symlinks
 
+# configure good code
+sudo ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+sudo dpkg-reconfigure -f noninteractive tzdata
+
 if command -v npm &> /dev/null
 then
     sudo npm install diff-so-fancy --location=global

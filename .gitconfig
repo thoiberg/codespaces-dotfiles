@@ -6,7 +6,7 @@ default = simple
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [user]
 	name = Tim Hoiberg
-	email = thoiberg@degica.com
+	#email = 
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -25,3 +25,5 @@ default = simple
 	template = ~/.gitmessage
 [init]
 	defaultBranch = main
+[rebase]
+        autoStash = true
